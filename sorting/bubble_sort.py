@@ -6,22 +6,18 @@ def bubble_sort(screen, matrix, clock):
     screen.fill(BLACK)
     clock.tick(FPS)
 
-    for i in range(len(nums)):
+    for i in range(len(nums)-1):
         screen.fill(BLACK)
         clock.tick(FPS)
 
-        sorted = False
-        while not sorted:
-            sorted = True
-            for i in range(len(nums) - 1):
-                for event in pygame.event.get():
-                    if event.type == pygame.QUIT:
-                        return
+        for j in range(0, len(nums)-i-1):
+            for event in pygame.event.get():
+                if event.type == pygame.QUIT:
+                    return
 
-                if nums[i+1] <= nums[i]:
-                    nums[i], nums[i+1] = nums[i+1], nums[i]
-                    sorted = False
+            if nums[j+1] < nums[j]:
+                nums[j], nums[j+1] = nums[j+1], nums[j]
 
-                matrix_from_nums(nums, matrix)
-                draw_matrix(screen, matrix)
-                pygame.display.flip()
+            matrix_from_nums(nums, matrix)
+            draw_matrix(screen, matrix)
+            pygame.display.flip()
