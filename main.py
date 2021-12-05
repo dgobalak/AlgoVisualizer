@@ -15,15 +15,29 @@ matrix = np.ones((NUM_ROWS, NUM_COLS))
 # matrix[-1] = np.zeros((len(matrix[0])))
 # matrix[:, -1] = np.zeros((len(matrix[:, 0])))
 
-def createSquare(x, y, color):
+def randomize_sorting_matrix(matrix):
+    rand_nums = np.arange(1, NUM_COLS + 1, NUM_ROWS//NUM_COLS)
+    np.random.shuffle(rand_nums)
+    
+    for col in range(np.shape(matrix)[1]):
+        rand_num = rand_nums[col]
+        tmp_col = np.ones(len(matrix[:, col]))
+        tmp_col[(len(tmp_col)-rand_num):(len(tmp_col))] = 0
+        matrix[:, col] = tmp_col
+
+
+def create_square(x, y, color):
     pygame.draw.rect(screen, color, [x, y, NODE_WIDTH, NODE_HEIGHT])
 
 
+randomize_sorting_matrix(matrix)
+print(list(matrix))
 ## Game loop
 running = True
 while running:
     screen.fill(BLACK)
-    clock.tick(FPS)    
+    clock.tick(FPS)   
+     
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             running = False
@@ -32,9 +46,9 @@ while running:
         for col in range(np.shape(matrix)[1]):
             node = matrix[row, col]
             if node == 0:
-                createSquare(col*NODE_WIDTH, row*NODE_HEIGHT, WHITE)
+                create_square(col*NODE_WIDTH, row*NODE_HEIGHT, WHITE)
             else:
-                createSquare(col*NODE_WIDTH, row*NODE_HEIGHT, BLACK)
+                create_square(col*NODE_WIDTH, row*NODE_HEIGHT, BLACK)
 
     pygame.display.flip()       
 
