@@ -1,4 +1,5 @@
 TITLE = "Algorithm Visualizer"
+FINAL_DELAY = 2 # seconds
 FPS = 15
 
 SCREEN_WIDTH = 400

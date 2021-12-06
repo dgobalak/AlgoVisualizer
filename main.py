@@ -1,6 +1,9 @@
 from sorting.bubble_sort import *
 from sorting.selection_sort import *
+from sorting.insertion_sort import *
+
 from helpers import *
+from time import sleep
 import pygame
 
 def main(ALGO):
@@ -16,7 +19,12 @@ def main(ALGO):
         selection_sort(screen, matrix, clock)
     elif ALGO == "BUBBLE":
         bubble_sort(screen, matrix, clock) 
-
+    elif ALGO == "INSERTION":
+        insertion_sort(screen, matrix, clock)
+    
+    sleep(FINAL_DELAY)
 
 if __name__ == '__main__':
-    main("BUBBLE")
+    main("INSERTION")
+    # main("BUBBLE")
+    # main("SELECTION")
