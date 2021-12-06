@@ -11,13 +11,14 @@ def insertion_sort(screen, matrix, clock):
         clock.tick(FPS)
         
         val = nums[i]
-        
-        for j in range(i-1, -1, -1):
-            if nums[j] > val:
-                nums[j], nums[j+1] = nums[j+1], nums[j]
-                continue
-            break
+        j = i
 
+        while j > 0 and nums[j-1] > val:
+            nums[j] = nums[j-1]
+            j -= 1
+
+        nums[j] = val
+                
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 return
