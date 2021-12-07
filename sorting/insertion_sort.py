@@ -1,5 +1,6 @@
 from helpers import *
-import pygame 
+import pygame
+
 
 def insertion_sort(screen, matrix, clock):
     nums = randomize_sorting_matrix(matrix)
@@ -9,7 +10,7 @@ def insertion_sort(screen, matrix, clock):
     for i in range(1, len(nums)):
         screen.fill(BLACK)
         clock.tick(FPS)
-        
+
         val = nums[i]
         j = i
 
@@ -17,12 +18,16 @@ def insertion_sort(screen, matrix, clock):
             nums[j] = nums[j-1]
             j -= 1
 
+            matrix_from_nums(nums, matrix)
+            draw_matrix(screen, matrix)
+            pygame.display.flip()
+
         nums[j] = val
-                
-        for event in pygame.event.get():
-            if event.type == pygame.QUIT:
-                return
 
         matrix_from_nums(nums, matrix)
         draw_matrix(screen, matrix)
         pygame.display.flip()
+
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                return

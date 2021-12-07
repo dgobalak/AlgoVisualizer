@@ -2,6 +2,7 @@ from settings import *
 import numpy as np
 import pygame
 
+
 def matrix_from_nums(nums, matrix):
     for col in range(np.shape(matrix)[1]):
         num = nums[col]
@@ -24,6 +25,7 @@ def draw_node(screen, x, y, color):
 
 
 def draw_matrix(screen, matrix):
+    screen.fill(BLACK)
     for row in range(np.shape(matrix)[0]):
         for col in range(np.shape(matrix)[1]):
             node = matrix[row, col]
