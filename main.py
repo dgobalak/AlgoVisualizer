@@ -16,18 +16,17 @@ def main(ALGO):
     screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
 
     matrix = np.ones((NUM_ROWS, NUM_COLS))
+    nums = randomize_sorting_matrix(matrix)
 
     if ALGO == "SELECTION":
-        selection_sort(screen, matrix)
+        selection_sort(screen, matrix, nums)
     elif ALGO == "BUBBLE":
-        bubble_sort(screen, matrix)
+        bubble_sort(screen, matrix, nums)
     elif ALGO == "INSERTION":
-        insertion_sort(screen, matrix)
+        insertion_sort(screen, matrix, nums)
     elif ALGO == "QUICK":
-        nums = randomize_sorting_matrix(matrix)
         quick_sort(screen, matrix, nums, 0, len(nums)-1)
     elif ALGO == "MERGE":
-        nums = randomize_sorting_matrix(matrix)
         merge_sort(screen, matrix, nums, 0, len(nums)-1)
 
     sleep(FINAL_DELAY)

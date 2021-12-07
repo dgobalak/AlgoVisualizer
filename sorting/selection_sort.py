@@ -3,8 +3,7 @@ import pygame
 import sys
 
 
-def selection_sort(screen, matrix):
-    nums = randomize_sorting_matrix(matrix)
+def selection_sort(screen, matrix, nums):
     screen.fill(BLACK)
 
     for i in range(len(nums)):

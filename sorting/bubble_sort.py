@@ -3,8 +3,7 @@ import pygame
 import sys
 
 
-def bubble_sort(screen, matrix):
-    nums = randomize_sorting_matrix(matrix)
+def bubble_sort(screen, matrix, nums):
     screen.fill(BLACK)
 
     sorted = False
