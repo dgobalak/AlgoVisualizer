@@ -4,7 +4,6 @@ import pygame
 
 def quick_sort(screen, matrix, clock, nums, a, b):
     if a < b:
-        screen.fill(BLACK)
         clock.tick(FPS)
 
         pivot_index = partition(screen, matrix, clock, nums, a, b)
