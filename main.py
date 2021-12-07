@@ -7,9 +7,11 @@ from sorting.merge_sort import *
 from helpers import *
 from time import sleep
 import pygame
+import time
 
 
 def main(ALGO):
+    start = time.time()
     pygame.init()
     pygame.display.set_caption(TITLE)
 
@@ -29,7 +31,9 @@ def main(ALGO):
     elif ALGO == "MERGE":
         merge_sort(screen, matrix, nums, 0, len(nums)-1)
 
+    end = time.time()
     sleep(FINAL_DELAY)
+    print(f"{ALGO}-> {end - start} sec")
 
 
 if __name__ == '__main__':

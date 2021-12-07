@@ -13,6 +13,9 @@ def selection_sort(screen, matrix, nums):
         for j in range(i, len(nums)):
             if nums[j] <= min_val:
                 min_i, min_val = j, nums[j]
+                matrix_from_nums(nums, matrix)
+                draw_matrix(screen, matrix)
+                pygame.display.flip()
 
         nums[i], nums[min_i] = nums[min_i], nums[i]
 
