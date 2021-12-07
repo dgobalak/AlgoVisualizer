@@ -2,6 +2,7 @@ from sorting.bubble_sort import *
 from sorting.selection_sort import *
 from sorting.insertion_sort import *
 from sorting.quick_sort import *
+from sorting.merge_sort import *
 
 from helpers import *
 from time import sleep
@@ -13,19 +14,21 @@ def main(ALGO):
     pygame.display.set_caption(TITLE)
 
     screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
-    clock = pygame.time.Clock()
 
     matrix = np.ones((NUM_ROWS, NUM_COLS))
 
     if ALGO == "SELECTION":
-        selection_sort(screen, matrix, clock)
+        selection_sort(screen, matrix)
     elif ALGO == "BUBBLE":
-        bubble_sort(screen, matrix, clock)
+        bubble_sort(screen, matrix)
     elif ALGO == "INSERTION":
-        insertion_sort(screen, matrix, clock)
+        insertion_sort(screen, matrix)
     elif ALGO == "QUICK":
         nums = randomize_sorting_matrix(matrix)
-        quick_sort(screen, matrix, clock, nums, 0, len(nums)-1)
+        quick_sort(screen, matrix, nums, 0, len(nums)-1)
+    elif ALGO == "MERGE":
+        nums = randomize_sorting_matrix(matrix)
+        merge_sort(screen, matrix, nums, 0, len(nums)-1)
 
     sleep(FINAL_DELAY)
 
@@ -35,3 +38,4 @@ if __name__ == '__main__':
     main("BUBBLE")
     main("SELECTION")
     main("QUICK")
+    main("MERGE")
