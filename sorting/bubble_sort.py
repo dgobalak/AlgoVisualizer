@@ -1,16 +1,15 @@
 from helpers import *
 import pygame
+import sys
 
 
-def bubble_sort(screen, matrix, clock):
+def bubble_sort(screen, matrix):
     nums = randomize_sorting_matrix(matrix)
     screen.fill(BLACK)
-    clock.tick(FPS)
 
     sorted = False
     for i in range(len(nums)-1):
         screen.fill(BLACK)
-        clock.tick(FPS)
 
         if sorted:
             break
@@ -19,7 +18,8 @@ def bubble_sort(screen, matrix, clock):
         for j in range(0, len(nums)-i-1):
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
-                    return
+                    pygame.quit()
+                    sys.exit()
 
             if nums[j+1] < nums[j]:
                 sorted = False

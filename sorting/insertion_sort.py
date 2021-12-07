@@ -1,15 +1,14 @@
 from helpers import *
 import pygame
+import sys
 
 
-def insertion_sort(screen, matrix, clock):
+def insertion_sort(screen, matrix):
     nums = randomize_sorting_matrix(matrix)
     screen.fill(BLACK)
-    clock.tick(FPS)
 
     for i in range(1, len(nums)):
         screen.fill(BLACK)
-        clock.tick(FPS)
 
         val = nums[i]
         j = i
@@ -30,4 +29,5 @@ def insertion_sort(screen, matrix, clock):
 
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
-                return
+                pygame.quit()
+                sys.exit()

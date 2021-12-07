@@ -1,14 +1,14 @@
 from helpers import *
-import pygame 
+import pygame
+import sys
 
-def selection_sort(screen, matrix, clock):
+
+def selection_sort(screen, matrix):
     nums = randomize_sorting_matrix(matrix)
     screen.fill(BLACK)
-    clock.tick(FPS)
 
     for i in range(len(nums)):
         screen.fill(BLACK)
-        clock.tick(FPS)
 
         min_i, min_val = i, nums[i]
         for j in range(i, len(nums)):
@@ -19,7 +19,8 @@ def selection_sort(screen, matrix, clock):
 
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
-                return
+                pygame.quit()
+                sys.exit()
 
         matrix_from_nums(nums, matrix)
         draw_matrix(screen, matrix)
