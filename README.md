@@ -61,7 +61,7 @@
 
 ### Overview
 
-AlgoVisualizer is built for visualizing common sorting and path-finding algorithms. Some examples include: quick sort, merge sort, heap sort, DFS, and Dijkstra's algorithm. All algorithms are implemented in Python and are displayed using the Pygame library.
+AlgoVisualizer is built for visualizing common sorting and path-finding algorithms. Some examples include: quick sort, merge sort, counting sort, DFS, and Dijkstra's algorithm. All algorithms are implemented in Python and are displayed using the Pygame library.
 <br>
 <!-- <br> -->
 
