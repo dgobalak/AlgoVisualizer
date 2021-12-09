@@ -1,7 +1,3 @@
-from helpers import *
-import pygame
-import sys
-import heapq
 
 
 class Heap:
