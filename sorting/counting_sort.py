@@ -4,24 +4,24 @@ import sys
 
 
 def counting_sort(screen, matrix, nums):
-    n = len(nums)
-    m = max(nums) + 1
+    nums_size = len(nums)
+    count_size = max(nums) + 1
 
-    count = [0] * m
+    count = [0] * count_size
 
-    # Store count of each element
-    for i in range(0, n):
+    # Store element counts in count array
+    for i in range(0, nums_size):
         count[nums[i]] += 1
 
-    # Store rolling sum
-    for i in range(1, m):
+    # Calculate cumulative sum of count
+    for i in range(1, count_size):
         count[i] += count[i - 1]
 
-    nums[0:count[1]] = [0] * len(nums[0:count[1]])
+    nums[0: count[1]] = 0
     for i, val in enumerate(count):
-        if i < len(count) - 1:
-            nums[val:count[i+1]] = [i+1] * len(nums[val:count[i+1]])
-            
+        if i + 1 < len(count):
+            nums[val: count[i+1]] = i+1
+
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
                     pygame.quit()
@@ -30,4 +30,3 @@ def counting_sort(screen, matrix, nums):
             matrix_from_nums(nums, matrix)
             draw_matrix(screen, matrix)
             pygame.display.flip()
-
