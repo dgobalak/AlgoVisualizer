@@ -3,6 +3,7 @@ from sorting.selection_sort import *
 from sorting.insertion_sort import *
 from sorting.quick_sort import *
 from sorting.merge_sort import *
+from sorting.counting_sort import *
 
 from helpers import *
 from time import sleep
@@ -30,6 +31,8 @@ def main(ALGO):
         quick_sort(screen, matrix, nums, 0, len(nums)-1)
     elif ALGO == "MERGE":
         merge_sort(screen, matrix, nums, 0, len(nums)-1)
+    elif ALGO == "COUNTING":
+        counting_sort(screen, matrix, nums)
 
     end = time.time()
     sleep(FINAL_DELAY)
@@ -42,3 +45,4 @@ if __name__ == '__main__':
     main("SELECTION")
     main("QUICK")
     main("MERGE")
+    main("COUNTING")
