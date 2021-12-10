@@ -1,3 +1,8 @@
+from helpers import *
+import pygame
+import sys
+import numpy as np
+from copy import deepcopy
 
 
 class Heap:
@@ -66,11 +71,33 @@ class Heap:
         return 2 * i + 2 == self.size
 
 
-def heap_sort(nums):
+def heap_sort(screen, matrix, nums):
     heap = Heap()
 
-    for num in nums:
-        heap.add(num)
+    for i in range(len(nums)):
+        heap.add(nums[i])
 
-    for i in range(len(nums)-1, -1, -1):
+        vals = np.concatenate([np.array(deepcopy(heap.heap)), nums[i+1:]])
+
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                pygame.quit()
+                sys.exit()
+
+        matrix_from_nums(vals, matrix)
+        draw_matrix(screen, matrix)
+        pygame.display.flip()
+
+    for i in range(len(nums)-1, 0, -1):
         nums[i] = heap.pop_root()
+
+        vals = np.concatenate([np.array(deepcopy(heap.heap)), nums[i:]])
+
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                pygame.quit()
+                sys.exit()
+
+        matrix_from_nums(vals, matrix)
+        draw_matrix(screen, matrix)
+        pygame.display.flip()
