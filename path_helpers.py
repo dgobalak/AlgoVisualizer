@@ -29,10 +29,10 @@ def draw_matrix(screen, matrix):
 
 def append_adjacent(adjacent, visited, node):
     # Append the 4 surrounding nodes
-    temp_nodes = [above(node), below(node), left(node), right(node)]
+    temp_nodes = [below(node), left(node), right(node), above(node)]
 
     for adjacent_node in temp_nodes:
-        if within_bounds(adjacent_node) and adjacent_node not in visited:
+        if within_bounds(adjacent_node) and adjacent_node not in visited and adjacent_node not in adjacent:
             adjacent.append(adjacent_node)
 
 
