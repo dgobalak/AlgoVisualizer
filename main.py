@@ -6,7 +6,7 @@ from sorting.merge_sort import *
 from sorting.heap_sort import *
 from sorting.counting_sort import *
 
-from helpers import *
+from sorting_helpers import *
 from time import sleep
 import pygame
 import time
