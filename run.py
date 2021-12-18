@@ -11,7 +11,7 @@ def main():
     pygame.display.set_caption(TITLE)
 
     START = (0, 0)
-    END = (10, 10)
+    END = (30, 25)
 
     screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
     matrix = np.ones((NUM_ROWS, NUM_COLS))

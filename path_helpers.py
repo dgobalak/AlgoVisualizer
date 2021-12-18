@@ -3,10 +3,6 @@ from settings import *
 import numpy as np
 import pygame
 
-# Override node sizes
-NODE_HEIGHT = 20
-NODE_WIDTH = 20
-
 
 def draw_node(screen, x, y, color):
     pygame.draw.rect(screen, color, [x, y, NODE_WIDTH, NODE_HEIGHT])
@@ -21,8 +17,10 @@ def draw_matrix(screen, matrix):
                 draw_node(screen, col*NODE_WIDTH, row*NODE_HEIGHT, GREEN)
             elif node == 2:  # End
                 draw_node(screen, col*NODE_WIDTH, row*NODE_HEIGHT, RED)
-            elif node == 3:  # Path
+            elif node == 3:  # Visited
                 draw_node(screen, col*NODE_WIDTH, row*NODE_HEIGHT, BLUE)
+            elif node == 4:
+                draw_node(screen, col*NODE_WIDTH, row*NODE_HEIGHT, YELLOW)
             else:   # Board
                 draw_node(screen, col*NODE_WIDTH, row*NODE_HEIGHT, BLACK)
 
@@ -36,6 +34,18 @@ def append_adjacent(adjacent, visited, node):
             if adjacent_node in adjacent:
                 adjacent.remove(adjacent_node)
             adjacent.append(adjacent_node)
+
+
+def get_adjacent(node):
+    # Append the 4 surrounding nodes
+    temp_nodes = [left(node), right(node), below(node), above(node)]
+    adjacent = []
+
+    for adjacent_node in temp_nodes:
+        if within_bounds(adjacent_node):
+            adjacent.append(adjacent_node)
+
+    return adjacent
 
 
 def within_bounds(node):
