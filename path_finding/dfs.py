@@ -6,6 +6,9 @@ def dfs(screen, matrix, start, end):
     adjacent = []
     visited = []
 
+    matrix[start] = 0
+    matrix[end] = 2
+
     visited.append(start)
     append_adjacent(adjacent, visited, start)
 
