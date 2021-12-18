@@ -7,7 +7,6 @@ from sorting.heap_sort import *
 from sorting.counting_sort import *
 
 from sorting_helpers import *
-from time import sleep
 import pygame
 import time
 
@@ -38,7 +37,7 @@ def main(ALGO):
         counting_sort(screen, matrix, nums)
 
     end = time.time()
-    sleep(FINAL_DELAY)
+    time.sleep(FINAL_DELAY)
     print(f"{ALGO}-> {end - start} sec")
 
 
