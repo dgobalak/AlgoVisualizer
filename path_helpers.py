@@ -38,7 +38,8 @@ def append_adjacent(adjacent, visited, node):
 
 def get_adjacent(node):
     # Append the 4 surrounding nodes
-    temp_nodes = [left(node), right(node), below(node), above(node)]
+    temp_nodes = [left(node), right(node), below(node), above(node), top_left(
+        node), top_right(node), bottom_right(node), bottom_left(node)]
     adjacent = []
 
     for adjacent_node in temp_nodes:
