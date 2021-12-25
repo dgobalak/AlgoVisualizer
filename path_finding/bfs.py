@@ -18,7 +18,8 @@ def bfs(screen, matrix, start, end):
         curr = adjacent.pop(0)
         if curr not in visited:
             visited.append(curr)
-            matrix[curr] = 3
+            if curr != end:
+                matrix[curr] = 3
         
         append_adjacent(adjacent, visited, curr)
         for event in pygame.event.get():
@@ -26,6 +27,17 @@ def bfs(screen, matrix, start, end):
                 pygame.quit()
                 sys.exit()
         
+        draw_matrix(screen, matrix)
+        pygame.display.flip()
+    
+    for node in visited[1:-1]:
+        matrix[node] = 4
+
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                pygame.quit()
+                sys.exit()
+
         draw_matrix(screen, matrix)
         pygame.display.flip()
                 

@@ -17,7 +17,8 @@ def dfs(screen, matrix, start, end):
         curr = adjacent.pop()
         if curr not in visited:
             visited.append(curr)
-            matrix[curr] = 3
+            if curr != end:
+                matrix[curr] = 3
         
         append_adjacent(adjacent, visited, curr)
         
@@ -25,6 +26,17 @@ def dfs(screen, matrix, start, end):
             if event.type == pygame.QUIT:
                 pygame.quit()
                 sys.exit()
+        draw_matrix(screen, matrix)
+        pygame.display.flip()
+    
+    for node in visited[1:-1]:
+        matrix[node] = 4
+
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                pygame.quit()
+                sys.exit()
+
         draw_matrix(screen, matrix)
         pygame.display.flip()
                 
