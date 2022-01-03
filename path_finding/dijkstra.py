@@ -1,4 +1,4 @@
-from path_helpers import *
+from path_finding.path_helpers import *
 import numpy as np
 
 

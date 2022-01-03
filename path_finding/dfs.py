@@ -1,5 +1,6 @@
-from path_helpers import *
+from path_finding.path_helpers import *
 import numpy as np
+
 
 # Depth-first search algorithm
 def dfs(screen, matrix, start, end):
@@ -19,16 +20,16 @@ def dfs(screen, matrix, start, end):
             visited.append(curr)
             if curr != end:
                 matrix[curr] = 3
-        
+
         append_adjacent(adjacent, visited, curr)
-        
+
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 pygame.quit()
                 sys.exit()
         draw_matrix(screen, matrix)
         pygame.display.flip()
-    
+
     for node in visited[1:-1]:
         matrix[node] = 4
 
@@ -39,6 +40,3 @@ def dfs(screen, matrix, start, end):
 
         draw_matrix(screen, matrix)
         pygame.display.flip()
-                
-
-

@@ -1,4 +1,4 @@
-from sorting_helpers import *
+from sorting.sorting_helpers import *
 import pygame
 import sys
 import numpy as np

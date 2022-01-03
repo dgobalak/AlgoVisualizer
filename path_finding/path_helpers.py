@@ -1,5 +1,5 @@
-import sys
-from settings import *
+from path_finding import *
+
 import numpy as np
 import pygame
 
