@@ -19,7 +19,7 @@
 
 <p align="center">
    <img src="demo.gif" width="400" height="400" style="display: block; margin: 0 auto;"/>
-   Demo of DFS, BFS, and Dijkstra's
+   <p align="center">Demo of DFS, BFS, and Dijkstra's</p>
 </p>
 
 <!-- TABLE OF CONTENTS -->
