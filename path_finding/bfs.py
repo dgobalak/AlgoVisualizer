@@ -1,14 +1,15 @@
-from path_helpers import *
+from path_finding.path_helpers import *
 import numpy as np
+import sys
+
 
 # Breadth-first search algorithm
 def bfs(screen, matrix, start, end):
     adjacent = []
     visited = []
-    
+
     matrix[start] = 0
     matrix[end] = 2
-
 
     visited.append(start)
     append_adjacent(adjacent, visited, start)
@@ -20,16 +21,16 @@ def bfs(screen, matrix, start, end):
             visited.append(curr)
             if curr != end:
                 matrix[curr] = 3
-        
+
         append_adjacent(adjacent, visited, curr)
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 pygame.quit()
                 sys.exit()
-        
+
         draw_matrix(screen, matrix)
         pygame.display.flip()
-    
+
     for node in visited[1:-1]:
         matrix[node] = 4
 
@@ -40,6 +41,3 @@ def bfs(screen, matrix, start, end):
 
         draw_matrix(screen, matrix)
         pygame.display.flip()
-                
-
-

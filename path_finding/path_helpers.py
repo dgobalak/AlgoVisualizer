@@ -1,5 +1,5 @@
-import sys
-from settings import *
+from path_finding import *
+
 import numpy as np
 import pygame
 
@@ -23,6 +23,8 @@ def draw_matrix(screen, matrix):
                 draw_node(screen, col*NODE_WIDTH, row*NODE_HEIGHT, YELLOW)
             else:   # Board
                 draw_node(screen, col*NODE_WIDTH, row*NODE_HEIGHT, BLACK)
+
+    pygame.display.flip()
 
 
 def append_adjacent(adjacent, visited, node):

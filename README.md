@@ -1,13 +1,5 @@
 # AlgoVisualizer
 
-<!-- [![Contributors][contributors-shield]][contributors-url]
-[![Forks][forks-shield]][forks-url]
-[![Stargazers][stars-shield]][stars-url]
-[![Issues][issues-shield]][issues-url]
-[![MIT License][license-shield]][license-url]
-[![LinkedIn][linkedin-shield]][] -->
-
-
 <!-- PROJECT LOGO -->
 <p align="center">
   <h3 align="center"><b>AlgoVisualizer</b></h3>
@@ -25,7 +17,10 @@
 </p>
 </p>
 
-
+<figure>
+   <img src="demo.gif" width="400" height="400" style="display: block; margin: 0 auto;"/>
+  <figcaption style="text-align: center;">Demo of DFS, BFS, and Dijkstra's</figcaption>
+</figure>
 
 <!-- TABLE OF CONTENTS -->
 <summary>
@@ -43,7 +38,7 @@
     <a href="#getting-started">Getting Started</a>
     <ul>
     <li><a href="#prerequisites">Prerequisites</a></li>
-    <li><a href="#installation-and-setup">Installation</a></li>
+    <li><a href="#installation-and-setup">Installation and Setup</a></li>
     </ul>
 </li>
 <!-- <li><a href="#contributing">Contributing</a></li> -->
@@ -97,11 +92,11 @@ To get a local copy up and running, follow these simple steps.
    ```
 2. Create a virtual environment
    ```sh
-   python -m venv venv
+   python -m venv .venv
    ```
 3. Activate the virtual environment
    ```sh
-   venv\scripts\activate
+   .venv\scripts\activate
    ```
 4. Install dependencies
    ```sh
@@ -112,43 +107,6 @@ To get a local copy up and running, follow these simple steps.
    python main.py
    ```
 
-
-<!-- USAGE EXAMPLES
-## Usage
-
-Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
-
-_For more examples, please refer to the [Documentation](https://example.com)_ -->
-
-
-
-<!-- ROADMAP -->
-<!-- ## Roadmap
-
-See the [open issues](https://github.com/github_username/repo_name/issues) for a list of proposed features (and known issues). -->
-
-
-
-<!-- CONTRIBUTING -->
-<!-- ## Contributing
-
-Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
-
-1. Fork the Project
-2. Create your Feature Branch 
-```sh
-   git checkout -b AmazingFeature
-```
-3. Commit your Changes 
-```sh
-   git commit -m 'Add some AmazingFeature'
-```
-4. Push to the Branch 
-```sh
-   git push origin AmazingFeature
-```
-5. Open a Pull Request and wait for it to be reviewed. -->
-
 ## License
 
 Distributed under the Apache 2.0 License . See `LICENSE` for more information.
@@ -158,11 +116,6 @@ Distributed under the Apache 2.0 License . See `LICENSE` for more information.
 
 * Daniel Gobalakrishnan - dgobalak@uwaterloo.ca
 * Project Link: [https://github.com/dgobalak/AlgoVisualizer](https://github.com/dgobalak/AlgoVisualizer)
-
-
-
-<!-- ACKNOWLEDGEMENTS -->
-<!-- ## Acknowledgements -->
 
 
 <!-- MARKDOWN LINKS & IMAGES -->
