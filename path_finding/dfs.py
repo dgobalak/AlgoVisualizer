@@ -1,5 +1,6 @@
 from path_finding.path_helpers import *
 import numpy as np
+import sys
 
 
 # Depth-first search algorithm

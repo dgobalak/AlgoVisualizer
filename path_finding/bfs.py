@@ -1,9 +1,9 @@
 from path_finding.path_helpers import *
 import numpy as np
+import sys
+
 
 # Breadth-first search algorithm
-
-
 def bfs(screen, matrix, start, end):
     adjacent = []
     visited = []
