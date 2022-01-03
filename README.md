@@ -17,10 +17,10 @@
 </p>
 </p>
 
-<figure>
+<p align="center">
    <img src="demo.gif" width="400" height="400" style="display: block; margin: 0 auto;"/>
-  <figcaption style="text-align: center;">Demo of DFS, BFS, and Dijkstra's</figcaption>
-</figure>
+   Demo of DFS, BFS, and Dijkstra's
+</p>
 
 <!-- TABLE OF CONTENTS -->
 <summary>
